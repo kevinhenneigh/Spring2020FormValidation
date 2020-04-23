@@ -5,10 +5,29 @@ window.onload = function(){
 }
 
 function main():void{
+    resetErrorMessages();
     isTxtPresent("first-name", "First name is required");
     isTxtPresent("last-name", "Last name is required");
 }
 
+/**
+ * Resets all spans back to default text
+ */
+
+function resetErrorMessages():void {
+    let allspans = document.querySelectorAll("form span");
+    
+    for (let i = 0; i < allspans.length; i++ ) {
+        let currSpan = <HTMLElement>allspans[i];
+        
+        if (currSpan.hasAttribute("data-required")) {
+                currSpan.innerText = "*"
+        }
+        else {
+            currSpan.innerText = "";
+        }
+    }
+}
 /**
  * Returns true if the textbox with the given id 
  * has some text inside it
