@@ -4,7 +4,31 @@ window.onload = function(){
     formBtn.onclick = main
 }
 
+/**
+ * Chande the message heading to a random color when it
+ * is clicked
+ */
+function changeHeading(){
+    let heading =<HTMLElement>this;
+    let red = Math.floor(Math.random() * 255 + 1);
+    let green = Math.floor(Math.random() * 255 + 1);
+    let blue = Math.floor(Math.random() * 255 + 1);
+    heading.style.color = "rgb(" + red + "," + green + "," + blue + ")";
+}
+
 function main():void{
+    let msgHeading = document.createElement ("h2");
+    msgHeading.innerText = "Processing form";
+    msgHeading.setAttribute("class", "message");
+    msgHeading.onclick = changeHeading;
+
+    let h1 = document.querySelector("h1");
+    h1.insertAdjacentElement("afterend", msgHeading);
+
+    setTimeout(function(){
+        msgHeading.remove();
+    }, 10000)
+
     resetErrorMessages();
     isTxtPresent("first-name", "First name is required");
     isTxtPresent("last-name", "Last name is required");
