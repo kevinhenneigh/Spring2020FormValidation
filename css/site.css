@@ -2,15 +2,41 @@ form span{
     color:red
 }
 
+button{
+    padding: 1em;
+    border-radius: .3em;
+    background-color: rgb(44, 180, 44);
+    color: red;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: aliceblue;
+
+}
+
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Baloo Bhaina 2', cursive;
+   
+}
+
  input[type=text]{
      margin-bottom: 1em;
  }
 
  form label{
      display: inline-block;
-     width: 50%;
+     width: 44%;
      text-align: right;
      margin-right: 2em;
+     font-family: 'Source Code Pro', monospace;
  }
 
  form button {
